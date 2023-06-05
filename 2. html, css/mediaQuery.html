@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+</head>
+<style>
+    /* 미디어쿼리 :: 특정 조건이 참인 경우, 미디어쿼리 양식에 있는 속성값 적용 */
+    /* 미디어 쿼리 생성
+    @media screen and (조건문) { 
+        "조건문이 참일때 적용할 스타일"
+        선택자{속성명: 속성값;}
+    }
+    */
+
+     /* 
+    body{
+        background-color: azure;
+    }
+     */
+
+    /*
+    @media screen and (max-width:1000px) {  //뷰포트 너비가 500 이하일때
+        body{
+            background-color: yellowgreen;
+        }
+    }
+
+    @media screen and (max-width:700px) {   
+        body{
+            background-color: skyblue;
+        }
+    }
+
+    @media screen and (max-width:500px) {   
+        body{
+            background-color: darkblue;
+        }
+    } 
+    */
+
+    /* 
+    @media screen and (orientation: portrait) {
+        landscape :: 화면이 가로 모드일 때
+        portrait :: 화면이 세로 모드일 때
+        body{
+            background-color: skyblue;
+        }
+    } 
+    */
+
+    @media screen and (max-width:600px) {
+        body{
+            background-color: yellowgreen;
+        }
+    }
+
+    @media screen and (max-width:1000px) {   
+        body{
+            background-color: skyblue;
+        }
+    }
+    
+    /* 범위 설정은 min-width로 하는 것이 안정적이다 */
+    @media screen and (min-width:600px) {   
+        body{
+            background-color: darkblue;
+        }
+    } 
+
+    @media screen and (min-width:1000px) {   
+        body{
+            background-color: papayawhip;
+        }
+    } 
+
+</style>
+<body>
+    
+</body>
+</html>

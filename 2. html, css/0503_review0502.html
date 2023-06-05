@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 이벤트 속성명 :: on이벤트명-->
+    <!-- <button onclick="alert('버튼을 누르셨군요!!')">눌러보세요</button> -->
+    <button id="btn">눌러보시오</button>
+    <p id="text"></p> <!-- 결과값 출력될 공간 마련 -->
+    <!-- 자바스크립트는 문자열이나 문자를 구분하지 않아 큰따옴표, 작은 따옴표 중 아무거나 사용해도 됨-->
+    <!-- <p id="text" onmouseover="Print()">마우스를 갖다대보세요</p> -->
+
+    <script>
+        // 객체(Object)
+		let lecture = {
+            name: "2030 여성지원",
+            location: "KB",
+            time: 6,
+
+            Print: function(){
+                console.log(`과정 기간은 ${this.time}개월입니다.`);
+                // this를 안 붙이고 변수값 불러오면, 자기 자신의 외부에서 찾아봄
+                // 객체 안의 필드값을 불러올 때에는 "반드시 this를 사용할 것"
+            }
+        };
+        let classes = new Object(); // 객체의 틀만 classes에게 부여
+        // let classes{
+
+        // }
+        classes.name = "2030 여성지원";  // name 속성 자동으로 추가 및 초기화
+        classes.location = "KB";
+        classes.time = 6;
+        
+        // 필드 접근 방법
+        console.log("이름: " + lecture.name);
+        console.log("장소: " + lecture["location"]);
+        // 메소드 접근 방법
+        lecture.Print();
+
+		// 이벤트(Event) :: 브라우저/사용자가 하는 행위
+        // 적용 방법 (1) html 태그 속성으로 등록
+        function Print(){
+            // document.write("텍스트이다 쨔샤");  -> write를 사용하면 새로운 창이 열린다.
+            document.getElementById("text").innerHTML = "텍스트다 쨔샤";
+        }
+
+        // 적용 방법 (2) 이벤트 리스너 적용
+        // 이벤트 리스너 :: 이벤트 발생 시, 그 처리를 전문으로 담당하는 함수(addEventListener)
+        // 1. 이벤트를 적용할 요소를 당겨오기 -> document.getElementById()
+        let button = document.getElementById("btn");
+        // 2. 당겨온 요소에 이벤트 적용 -> addEventListener()
+        button.addEventListener("click",show1); // "클릭했을 때, 함수 show1을 수행한다."
+        button.addEventListener("mouseover", show2);
+            // "요소에 마우스를 갖다댔을 때, 함수 show2를 실행한다."
+        // 3. 적용할 이벤트 동작 정의 (2번이랑 순서 바껴도 상관X)
+        function show1(){
+            alert("눌렀나 자네");
+        }
+        function show2(){
+            document.getElementById("text").innerHTML = "썅 날 건들였냐";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="회원가입폼CSS.css">
+</head>
+<body>
+    <form>
+        <h1>
+            예제 :: input폼을 이용하여 회원가입 폼 만들기
+        </h1>
+        <div>
+            <p>
+                <label for="id" class="id">아이디</label>
+                <input type="text" class="id">
+            </p>
+            <p>
+                <label class="pw">비밀번호</label>
+                <input type="password" class="pw">
+            </p>
+            <p>
+                <label class="pw">비밀번호 재확인</label>
+                <input type="password" class="pw">
+            </p>
+            <p>
+                <label for="name" class="name">이름</label>
+                <input type="text" class="name">
+            </p>
+            <p>
+                <label for="date" class="date">생년월일</label>
+                <input type="text" id="first_date" class="date">
+                <select name="sec_date" id="sec_date" class="date">
+                    <option>월</option>
+                    <option value="Jan.">1</option>
+                    <option value="Feb.">2</option>
+                    <option value="Mar.">3</option>
+                    <option value="Apr.">4</option>
+                    <option value="May.">5</option>
+                    <option value="Jun.">6</option>                
+                    <option value="Jul.">7</option>                
+                    <option value="Aug.">8</option>
+                    <option value="Sep.">9</option>
+                    <option value="Oct.">10</option>
+                    <option value="Nov.">11</option>
+                    <option value="Dec.">12</option>
+                </select>
+                <input type="text" id="trd_date" class="date">
+            </p>
+            <p>
+                <label for="sex" class="sex">성별</label>
+                <select name="sex" id="sex" class="sex">
+                    <option>성별</option>
+                    <option value="남">남</option>
+                    <option value="여">여</option>
+                </select>
+            </p>
+            <p>
+                <label for="email" class="email">본인 확인 이메일</label>
+                <input type="text" class="email">
+            </p>
+            <p>
+                <label for="phone" class="phone">휴대전화</label>
+                <select name="ph_one" id="ph_one" class="phone">
+                    <option value="korean">대한민국 +82</option>
+                    <option value="japan">일본 +81</option>
+                    <option value="china">중국 +86</option>
+                    <option value="america">미국 +1</option>
+                    <option value="Philippines">필리핀 +63</option>
+                    <option value="U.K">영국 +44</option>
+                </select><br>
+                <input type="text" name="ph_two" id="ph_two" class="phone"><input type="button" id="ph_btn" value="인증번호 받기">
+            </p>
+            <p>
+                <button>가입하기</button>
+            </p>
+        </div>
+    </form>
+</body>
+</html>

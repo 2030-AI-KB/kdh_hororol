@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(228, 228, 228);
+}
+p{
+
+}
+
+input{
+    width: 600px;
+    height: 50px;
+}
+select{
+    width: 600px;
+    height: 55px;
+}
+
+/* input#first_date{
+    width: 193px;
+}
+
+input#trd_date{
+    width: 193px;
+}
+select#sec_date{
+    width: 193px;
+}
+
+input#ph_two{
+    width: 395px;
+}
+
+input#ph_btn{
+    width: 195px;
+} */
+
+p>label{
+    display: block;
+}
+
+p{
+    box-sizing: border-box;
+    text-align: center;
+}

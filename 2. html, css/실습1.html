@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Hello HTML</title>
+</head>
+<style>
+    h1{ /* 모든 h1 태그에 적용하는 스타일 */
+        color:salmon;
+        background-color: antiquewhite;
+        text-align: center;
+        padding: 15px;
+    }
+    h3{
+        background-color: antiquewhite;
+        padding: 5px;
+    }
+    li{
+        padding: 3px;
+    }
+    table{
+        width: 70%;
+        border: 3px solid black;
+        background-color: white;
+    }
+    th{
+        border: 1px solid black;
+    }
+</style>
+<body style="background-image: url('https://t1.daumcdn.net/cfile/tistory/996B0E415F37F71905');">
+    <h1>Hello World</h1>
+    <p style="text-align: center; background-color:brown; color: white; font-family: Verdana;">
+        ** 각 정보는 본인에게 맞춰서 작성하세요 **<br>
+        (글씨체는 verdana로 설정)
+    </p>
+    <br>
+    <h3>내 정보</h3>
+    <p>
+        <ul style="background-color: antiquewhite;">
+            <li>이름: 홍길동</li>
+            <li>성별: 남자</li>
+            <li>나이: 24</li>
+            <li>직업: 교사</li>
+            <li>소속: <a href="http://naver.com">네이버입니다.</a></li>
+            <li>
+                좋아하는 것
+                <dl>
+                    <dt>커피 (Coffee)</dt>
+                    <dd>(코멘트)"카페인이 세상을 지배한다."</dd>
+                    <dt>돈까스 (a pork cutlet)</dt>
+                    <dd>(코멘트)"돈까스랑 메밀소바는 찰떡 궁합."</dd>
+                    <dt>고양이 (Cat)</dt>
+                    <dd>(코멘트)"고양이는 까칠하지만 귀여운 주인님."</dd>
+                </dl>
+            </li>
+            <li>프로필 사진<br>
+                <img src="https://r2.jjalbot.com/2023/03/PQ4C0-cv44.png">
+            </li>
+        </ul>
+        <br>
+
+        <h3>일정</h3>
+        <table>
+            <tr>        <!-- tr 태그 :: 행을 구성하는 태그-->
+                <th>우선순위</th>       <!-- th 태그 :: 열을 구성, 카테고리를 표현-->
+                <th>마감기한</th>
+                <th>내용</th>
+            </tr>
+            <tr>
+                <td>5</td>   <!-- td 태그 :: 열을 구성, 데이터를 표현-->
+                <td>4/21</td>
+                <td>숙면</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>항상</td>
+                <td>수업 준비</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>항상</td>
+                <td>백준 1문제씩 풀기</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4/23</td>
+                <td>가계부 작성</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>4/28</td>
+                <td>저녁 약속</td>
+            </tr>
+        </table>
+        <br>
+        <p style="text-align: center; background-color:brown; color: white; font-family: Verdana;">**수고하셨습니다**</p>
+        <h1>Goodbye World</h1>
+    </p>
+</body>
+</html>

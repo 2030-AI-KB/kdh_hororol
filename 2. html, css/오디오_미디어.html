@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Audio and Video</title>
+</head>
+<body>
+    <p>비디오 불러오기(로컬 컴퓨터 영상 끌어오기)</p>
+    <video width="500" autoplay muted>     <!-- 비디오 태그 -->
+        <!-- controls 속성 :: 동영상의 재생바 제공 -->
+        <!-- autoplay 속성 :: 자동으로 재생 -->
+        <!-- source 태그를 통해서 동영상 삽입 -->
+        <source src="C:\Users\User\Desktop\JavaScript\고영희 저금통.mp4" type="video/mp4">
+        왜 안되는데     <!-- 동영상 지원이 원활하게 되지 않을 때, 표시되는 문구-->
+        <!-- 주어진 영상을 type에 명시된 확장자로 제공한다. -->
+    </video>
+    <br>
+
+    <audio controls>    <!-- 오디오 태그 -->
+        <source src="C:\Users\User\Desktop\JavaScript\카톡.mp3" type="audio/mp3">
+    </audio>
+    <br>
+
+    <p>유튜브 영상 끌어오기</p>
+    <iframe width="500" height="300" src="https://www.youtube.com/embed/AT3GoK8AU7o?autoplay=1&mute=1"></iframe>  <!-- 유튜브 영상 끌어오는 태그 -->
+</body>
+</html>

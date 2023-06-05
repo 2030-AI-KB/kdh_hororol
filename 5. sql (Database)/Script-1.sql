@@ -1,0 +1,83 @@
+INSERT INTO EMP_DETAIL(TEL, CHILD, AGE, EMPNO) VALUES('01025824564', 1, 40, 7499);
+INSERT INTO EMP_DETAIL(TEL, CHILD, AGE, EMPNO) VALUES('01048844558', 0, 26, 7521);
+INSERT INTO EMP_DETAIL(TEL, CHILD, AGE, EMPNO) VALUES('01028874745', 0, 28, 7566);
+INSERT INTO EMP_DETAIL(TEL, CHILD, AGE, EMPNO) VALUES('01025478462', 1, 35, 7654);
+
+-- 1. 사원 상세 정보가 존재하는 사원의 사번, 이름, 직업, 전화번호, 자녀수, 나이, 부서명을 출력하시오.
+SELECT 
+	e.EMPNO
+	, e.ENAME
+	, e.JOB
+	, ed.TEL
+	, ed.CHILD
+	, ed.AGE
+	, d.DNAME
+FROM EMP e 
+INNER JOIN EMP_DETAIL ed ON e.EMPNO = ed.EMPNO
+INNER JOIN DEPT d ON e.DEPTNO = d.DEPTNO;
+
+-- 2. 모든 사원의 사번, 이름, 직업, 전화번호, 자녀수, 나이, 부서명을 출력하시오.
+SELECT 
+	e.EMPNO
+	, e.ENAME
+	, e.JOB
+	, ed.TEL
+	, ed.CHILD
+	, ed.AGE
+	, d.DNAME 
+FROM EMP e
+LEFT JOIN EMP_DETAIL ed ON e.EMPNO = ed.EMPNO
+INNER JOIN DEPT d ON e.DEPTNO = d.DEPTNO;
+
+-- 3. 자녀수가 0인 사원의 사원 정보(EMP, DETAIL, DEPT)를 모두 출력하시오.
+SELECT 
+	e.EMPNO
+	, e.ENAME
+	, e.JOB
+	, e.MGR
+	, e.HIREDATE
+	, e.SAL
+	, e.COMM
+	, ed.TEL
+	, ed.CHILD
+	, ed.AGE
+	, d.DNAME 
+FROM EMP e
+LEFT JOIN EMP_DETAIL ed ON e.EMPNO = ed.EMPNO
+INNER JOIN DEPT d ON e.DEPTNO = d.DEPTNO
+WHERE ed.CHILD = 0;
+
+-- 4. 상세 정보가 없는 사원이 몇명인지 출력하시오.
+SELECT COUNT(*) 
+FROM EMP e  
+LEFT JOIN EMP_DETAIL ed ON e.EMPNO = ed.EMPNO
+WHERE ed.TEL IS NULL AND ed.AGE IS NULL AND ed.CHILD IS NULL;
+-- ed.TEL = NULL 해도 무방함
+-- where ed.EMPNO IS NULL이 조금 더 효율적이다
+
+-- 5. 상세 정보가 있는 사원의 평균 급여를 출력하시오.
+SELECT AVG(NVL(e.SAL, 0))
+FROM EMP e
+INNER JOIN EMP_DETAIL ed ON e.EMPNO = ed.EMPNO;
+--통계할때는 습관적으로 null값을 찾아라
+
+-- 6. 'DALLAS'에서 근무하고 있는 사원들의 총 자녀 수를 출력하시오.
+SELECT SUM(NVL(ed.CHILD, 0))  
+FROM EMP e
+INNER JOIN DEPT d ON e.DEPTNO = d.DEPTNO
+INNER JOIN EMP_DETAIL ed ON e.EMPNO = ed.EMPNO
+WHERE d.LOC = 'DALLAS';
+
+SELECT
+	EMPNO
+	, ENAME
+	, SAL
+	, (SELECT AVG(SAL) FROM EMP) AS avg
+FROM EMP
+WHERE SAL > (SELECT AVG(SAL) FROM EMP);
+
+
+
+
+
+

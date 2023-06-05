@@ -1,0 +1,35 @@
+body{
+    text-align: center;
+}
+
+form#form_left{
+    float: left;
+    margin-left: 35%;
+}
+
+form#form_right{
+    float: right;
+    margin-right: 35%;
+}
+
+input{
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+
+    animation-name: ani;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+/* 커졌다 작아졌다를 무한으로 실행 */
+@keyframes ani {
+    0%{width: 150px; height: 150px;}
+    50%{width: 200px; height: 200px;}
+    100%{width: 150px; height: 150px;}
+}

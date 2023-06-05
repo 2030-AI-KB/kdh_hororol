@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 연습</title>
+</head>
+<style>
+    input{
+        margin: 5px;
+    }
+    button{
+        margin: 5px;
+    }
+</style>
+<body>
+    <!-- 이름, 성별, 나이에 대하여 입력받기(input 태그) -->
+    <label>이름: </label>
+    <input type="text" id="name"> <br>
+    <label>성별: </label>
+    <input type="text" id="gender"> <br>
+    <label>나이: </label>
+    <input type="text" id="age"> <br>
+    <button id="btn">전송</button>
+    <p id="text"></p>   <!--결과값 출력될 공간 -->
+
+    <script>
+        let button = document.getElementById("btn");
+        button.addEventListener("click", Print);
+
+        function Print(){
+            alert("입력 감사합니다");
+            let name = document.getElementById("name").value;
+            let gender = document.getElementById("gender").value;
+            let age = document.getElementById("age").value;
+            document.getElementById("text").innerHTML = `<hr>이름: ${name}<br>성별: ${gender}<br>나이: ${age}`; // 변수를 끌고 올려면 무조건 리터럴 방식으로 작성해야된다.
+        }
+    </script>
+</body>
+</html>
